@@ -1,10 +1,17 @@
 function KeyboardControlls() {
-  if (Aiming.aimingMode) {
+  if (Aiming.aimingMode && maxShots != 0) {
     if (keyIsPressed && key == ' ') {
       // Shooting
-      let proj = new Projectile(projectile_TEXTURE, 150, 530, 25, 25, {
-        label: 'projectile',
-      });
+      let proj = new Projectile(
+        projectile_TEXTURE,
+        player.x,
+        player.y,
+        25,
+        25,
+        {
+          label: 'projectile',
+        }
+      );
       Aiming.aimX = Math.floor(
         Aiming.magnitude *
           Math.cos(
@@ -30,6 +37,7 @@ function KeyboardControlls() {
       );
       Aiming.aimingMode = false;
       projectiles.push(proj);
+      maxShots -= 1;
     }
     if (
       keyIsPressed &&
@@ -47,20 +55,20 @@ function KeyboardControlls() {
       // Magnitude Decrease
       Aiming.magnitude -= 1;
     }
-    if (
-      keyIsPressed &&
-      (keyCode === RIGHT_ARROW || key == 'd' || key == 'D') &&
-      Aiming.aimAngle != 360
-    ) {
+    if (keyIsPressed && (keyCode === RIGHT_ARROW || key == 'd' || key == 'D')) {
       // Angle increase
+      if (Aiming.angle > 360) {
+        Aiming.angle = 0;
+        Aiming.aimAngle = 0;
+      }
       Aiming.aimAngle += 1;
     }
-    if (
-      keyIsPressed &&
-      (keyCode === LEFT_ARROW || key == 'a' || key == 'A') &&
-      Aiming.aimAngle != 0
-    ) {
+    if (keyIsPressed && (keyCode === LEFT_ARROW || key == 'a' || key == 'A')) {
       // Angle decrease
+      if (Aiming.angle < 0) {
+        Aiming.angle = 360;
+        Aiming.aimAngle = 360;
+      }
       Aiming.aimAngle -= 1;
     }
   }

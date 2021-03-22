@@ -1,6 +1,14 @@
 class Target {
-  constructor(img, x, y, d, points, options) {
-    this.body = Bodies.circle(x, y, d - 15, options);
+  constructor(x, y, d, points) {
+    this.body = Bodies.circle(x, y, d - 15, {
+      isStatic: true,
+      label: 'target',
+    });
+    this.img = random([
+      targetRed_TEXTURE,
+      targetGreen_TEXTURE,
+      targetPurple_TEXTURE,
+    ]);
     this.points = points;
     this.x = x;
     this.y = y;
@@ -14,8 +22,7 @@ class Target {
       translate(pos.x, pos.y);
       rotate(angle);
       imageMode(CENTER);
-      rectMode(CENTER);
-      image(img, 0, 0, this.d, this.d);
+      image(this.img, 0, 0, this.d, this.d);
       pop();
     };
   }

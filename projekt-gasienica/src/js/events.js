@@ -1,5 +1,4 @@
 function hitDetection(event) {
-  console.log(event);
   let pairs = event.pairs;
   for (let i = 0; i < pairs.length; i++) {
     var labelA = pairs[i].bodyA.label;
@@ -13,14 +12,20 @@ function hitDetection(event) {
       projectiles.splice(i, 1);
       Aiming.aimingMode = true;
     }
-    if (labelA === 'projectile' && labelB === 'target') {
-      Points += targets[i].points;
-      World.remove(world, targets[i].body);
-      targets.splice(i, 1);
-    } else if (labelB === 'projectile' && labelA === 'target') {
-      Points += targets[i].points;
-      World.remove(world, targets[i].body);
-      targets.splice(i, 1);
+    if (
+      (labelA === 'projectile' && labelB === 'target') ||
+      (labelB === 'projectile' && labelA === 'target')
+    ) {
+      for (let j = 0; j < targets.length; j++) {
+        if (
+          targets[j].body == pairs[i].bodyA ||
+          targets[j].body == pairs[i].bodyB
+        ) {
+          Points += targets[j].points;
+          World.remove(world, targets[j].body);
+          targets.splice(j, 1);
+        }
+      }
     }
   }
 }

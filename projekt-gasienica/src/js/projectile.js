@@ -1,5 +1,6 @@
 var Aiming = {
   aimAngle: 0,
+  angle: 0,
   aimAngleOffset: -90,
   aimX: 0,
   aimY: 0,

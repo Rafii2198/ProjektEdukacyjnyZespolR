@@ -4,13 +4,41 @@
     <meta charset="UTF-8" />
     <title>Projekt Gąsienica</title>
     <link rel="stylesheet" href="index.css" />
-    <script src="js/libraries/p5.js" defer></script>
-    <script src="js/libraries/matter.js" defer></script>
-    <script src="js/events.js"></script>
-    <script src="js/target.js"></script>
-    <script src="js/controlls.js"></script>
-    <script src="js/proejctile.js"></script>
-    <script src="js/game.js" defer></script>
+    <script src="js/mainMenu.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <div class="mainmenu">
+      <div class="logoContainer"><img src="assets/menugraphic.png" /></div>
+      <div class="menuInsides">
+        <!-- Test Level -->
+        <div
+          class="menuLevels"
+          style="grid-column: 1; grid-row: 1"
+          id="testLevel"
+        >
+          <img src="assets/menuLevels.png" class="menuLevelsBackground" />
+          <img
+            src="assets/LevelImages/testLevel.png"
+            class="menuLevelsPreview"
+          />
+          <p class="menuLevelScore" id="testLevel_Score"></p>
+        </div>
+        <!-- -->
+        <div
+          class="menuLevels"
+          style="grid-column: 1; grid-row: 2"
+        >
+          <img src="assets/menuLevels.png" class="menuLevelsBackground" />
+        </div>
+        <!-- -->
+        <div class="menuLevels" style="grid-column: 2; grid-row: 1">
+          <img src="assets/menuLevels.png" class="menuLevelsBackground" />
+        </div>
+        <!-- -->
+        <div class="menuLevels" style="grid-column: 2; grid-row: 2">
+          <img src="assets/menuLevels.png" class="menuLevelsBackground" />
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

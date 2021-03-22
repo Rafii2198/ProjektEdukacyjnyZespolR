@@ -1,4 +1,58 @@
 body {
   all: unset;
+  background-color: #333333;
   overflow: hidden;
+}
+
+.mainmenu {
+  display: grid;
+  row-gap: 5px;
+  grid-template-columns: 500px;
+  grid-template-rows: 150px 390px 45px;
+  justify-content: center;
+  align-content: center;
+}
+.logoContainer {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.menuInsides {
+  grid-column: 1;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 225px 225px;
+  grid-template-rows: 170px 170px;
+  gap: 25px;
+  justify-content: center;
+  align-content: center;
+}
+.menuLevels {
+  position: relative;
+}
+.menuLevels:hover {
+  cursor: pointer;
+}
+
+.menuLevelsBackground {
+  border-radius: 8px;
+}
+
+.menuLevelsPreview {
+  position: absolute;
+  width: 175px;
+  height: 120px;
+  left: 25px;
+  top: 5px;
+  border-radius: 5px;
+  border: solid 2px #cf8b09;
+}
+
+.menuLevelScore {
+  position: absolute;
+  display: block;
+  width: 225px;
+  text-align: center;
+  font-family: 'bahnschrift';
+  bottom: 0;
 }

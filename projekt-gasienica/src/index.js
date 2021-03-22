@@ -11,12 +11,12 @@ const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 800,
-    height: 600,
+    height: 605,
     resizable: false,
     icon:
       '/run/media/rafii2198/HDD/Szkoła/ProjektEdukacyjnyZespolR/icons/output/icons/png/512x512.png',
   });
-
+  mainWindow.removeMenu();
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
