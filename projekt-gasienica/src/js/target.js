@@ -1,6 +1,6 @@
-class Target {
+class target {
   constructor(x, y, d, points) {
-    this.body = Bodies.circle(x, y, d - 15, {
+    this.body = Bodies.circle(x, y, d / 2, {
       isStatic: true,
       label: 'target',
     });

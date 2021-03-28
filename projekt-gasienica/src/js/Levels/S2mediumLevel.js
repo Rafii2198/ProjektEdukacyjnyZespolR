@@ -6,12 +6,13 @@ const Engine = Matter.Engine,
   Events = Matter.Events,
   Bodies = Matter.Bodies;
 
-var maxShots = 3;
+var maxShots = 8;
 // ANCHOR Predefinitions
 let engine;
 let world;
 let projectiles = [];
 let targets = [];
+let terrain = [];
 let Points = 0;
 var player;
 function setup() {
@@ -27,18 +28,31 @@ function setup() {
     label: 'ground',
   });
   World.add(world, ground);
-  player = new Player(150, 430, 5);
-  for (let i = 0; i < random(1, 8); i++) {
-    targets.push(new target(random(50, 750), random(50, 550), 50, 50));
-  }
-}
+  player = new Player(width / 2, 165, 5);
+  // ANCHOR Adding targets
+  targets.push(new target(137, 300, 40, 50));
+  targets.push(new target(137, 500, 40, 50));
+  targets.push(new target(137, 100, 40, 50));
+  targets.push(new target(663, 300, 40, 50));
+  targets.push(new target(663, 500, 40, 50));
+  targets.push(new target(663, 100, 40, 50));
 
+  // ANCHOR Adding terrain
+  terrain.push(
+    new terrainRect(width / 2, (height / 3) * 2, 250, (height / 4) * 3)
+  );
+}
+ // ZW
 function draw() {
   background(51);
+  image(bacground1_TEXTURE, -300, 0, 1200, 659);
   KeyboardControlls();
   noStroke(255);
   fill(170);
   rectMode(CENTER);
+  for (var i = 0; i < terrain.length; i++) {
+    terrain[i].show();
+  }
   player.show();
   for (var i = 0; i < projectiles.length; i++) {
     projectiles[i].show();
@@ -48,12 +62,12 @@ function draw() {
   }
   textAlign(CENTER);
   if (maxShots != 0) {
-    text(`Score: ${Points}`, width / 2, 24);
+    text(`Wynik: ${Points}`, width / 2, 24);
   } else {
-    text(`Press anywhere to continue`, width / 2, 24);
+    text(`Kliknij Prawy Przycisk myszy`, width / 2, 24);
     window.addEventListener('click', () => {
-      if (Points > localStorage.getItem('testLevel_Score')) {
-        window.localStorage.setItem('testLevel_Score', Points);
+      if (Points > localStorage.getItem('S2mediumLevel_Score')) {
+        window.localStorage.setItem('S2mediumLevel_Score', Points);
       }
       window.location.href = '../index.html';
     });

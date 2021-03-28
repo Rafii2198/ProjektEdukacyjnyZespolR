@@ -6,7 +6,7 @@ const Engine = Matter.Engine,
   Events = Matter.Events,
   Bodies = Matter.Bodies;
 
-var maxShots = 5;
+var maxShots = 6;
 // ANCHOR Predefinitions
 let engine;
 let world;
@@ -28,22 +28,30 @@ function setup() {
     label: 'ground',
   });
   World.add(world, ground);
-  player = new Player(400, 535, 5);
+  player = new Player(width / 2, 165 + 245, 5);
   // ANCHOR Adding targets
-  targets.push(new target(width / 8, height / 2 + 50, 45, 50));
-  targets.push(new target(width / 4, height / 4 + 50, 45, 50));
-  targets.push(new target(width / 2, height / 8 + 50, 45, 50));
-  targets.push(new target(width / 4 + width / 2, height / 4 + 50, 45, 50));
-  targets.push(
-    new target(width / 8 + width / 2 + width / 4, height / 2 + 50, 45, 50)
-  );
-  // ANCHOR Adding terrain
-  terrain.push(new terrainRect(400, 575, 800, 50));
-}
+  targets.push(new target(137, 550, 40, 50));
+  targets.push(new target(137 - 40, 500, 40, 50));
+  targets.push(new target(137 + 40, 500, 40, 50));
+  targets.push(new target(137, 250, 40, 50));
+  targets.push(new target(137 - 40, 200, 40, 50));
+  targets.push(new target(137 + 40, 200, 40, 50));
+  targets.push(new target(663, 550 - 100, 40, 50));
+  targets.push(new target(663 - 40, 500 - 100, 40, 50));
+  targets.push(new target(663 + 40, 500 - 100, 40, 50));
+  targets.push(new target(663, 250 - 100, 40, 50));
+  targets.push(new target(663 - 40, 200 - 100, 40, 50));
+  targets.push(new target(663 + 40, 200 - 100, 40, 50));
 
+  // ANCHOR Adding terrain
+  terrain.push(
+    new terrainRect(width / 2, (height / 3) * 2 + 250, 250, (height / 4) * 3)
+  );
+}
+// ZW
 function draw() {
   background(51);
-  image(bacground3_TEXTURE, 0, 0, 1200, 659);
+  image(bacground2_TEXTURE, -300, 0, 1200, 659);
   KeyboardControlls();
   noStroke(255);
   fill(170);
@@ -64,8 +72,8 @@ function draw() {
   } else {
     text(`Kliknij Prawy Przycisk myszy`, width / 2, 24);
     window.addEventListener('click', () => {
-      if (Points > localStorage.getItem('tutorialLevel_Score')) {
-        window.localStorage.setItem('tutorialLevel_Score', Points);
+      if (Points > localStorage.getItem('S3easyLevel_Score')) {
+        window.localStorage.setItem('S3easyLevel_Score', Points);
       }
       window.location.href = '../index.html';
     });

@@ -11,7 +11,7 @@ const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 800,
-    height: 605,
+    height: 600,
     resizable: false,
     icon:
       '/run/media/rafii2198/HDD/Szkoła/ProjektEdukacyjnyZespolR/icons/output/icons/png/512x512.png',
@@ -19,9 +19,6 @@ const createWindow = () => {
   mainWindow.removeMenu();
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
-
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished

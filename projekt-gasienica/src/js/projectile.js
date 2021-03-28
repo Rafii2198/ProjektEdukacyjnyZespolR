@@ -21,9 +21,9 @@ class Projectile {
 
       push();
       translate(pos.x, pos.y);
-      rotate(angle);
       imageMode(CENTER);
       rectMode(CENTER);
+      rotate(angle);
       image(img, 0, 0, this.w, this.h);
       pop();
     };

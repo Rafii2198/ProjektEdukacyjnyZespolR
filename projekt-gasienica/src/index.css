@@ -8,7 +8,7 @@ body {
   display: grid;
   row-gap: 5px;
   grid-template-columns: 500px;
-  grid-template-rows: 150px 390px 45px;
+  grid-template-rows: 150px 390px 40px;
   justify-content: center;
   align-content: center;
 }
@@ -55,4 +55,32 @@ body {
   text-align: center;
   font-family: 'bahnschrift';
   bottom: 0;
+}
+
+.menuLevelButtonSpace {
+  grid-column: 1;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-template-rows: 500px;
+  gap: 25px;
+}
+.menuLevelButton {
+  width: 150px;
+  height: 40px;
+  background-color: #cf8b09;
+  display: flex;
+  font-family: 'bahnschrift';
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+.menuButtonText {
+  font-size: 18px;
+  height: 18px;
+}
+
+#hidden {
+  display: none !important;
 }
