@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Projekt Gąsienica</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="mainmenu">
+      <div class="logoContainer"><img src="assets/menugraphic.png" /></div>
+      <div class="menuInsides">
+        <!-- Test Level -->
+        <div
+          class="menuLevels"
+          style="grid-column: 1; grid-row: 1"
+          id="testLevel"
+          name="slot"
+        >
+          <img src="assets/menuLevels.png" class="menuLevelsBackground" />
+          <img
+            src="assets/LevelImages/testLevel.png"
+            class="menuLevelsPreview"
+            name="imageSlot"
+          />
+          <p class="menuLevelScore" id="testLevel_Score" name="scoreSlot"></p>
+        </div>
+        <!-- Tutorial -->
+        <div
+          class="menuLevels"
+          style="grid-column: 2; grid-row: 1"
+          id="tutorialLevel"
+          name="slot"
+        >
+          <img src="assets/menuLevels.png" class="menuLevelsBackground" />
+          <img
+            src="assets/LevelImages/tutorialLevel.png"
+            class="menuLevelsPreview"
+            name="imageSlot"
+          />
+          <p
+            class="menuLevelScore"
+            id="tutorialLevel_Score"
+            name="scoreSlot"
+          ></p>
+        </div>
+        <!-- Level 1 -->
+        <div
+          class="menuLevels"
+          style="grid-column: 1; grid-row: 2"
+          id="mediumLevel"
+          name="slot"
+        >
+          <img src="assets/menuLevels.png" class="menuLevelsBackground" />
+          <img
+            src="assets/LevelImages/mediumLevel.png"
+            class="menuLevelsPreview"
+            name="imageSlot"
+          />
+          <p class="menuLevelScore" id="mediumLevel_Score" name="scoreSlot"></p>
+        </div>
+        <!-- Level 2 -->
+        <div
+          class="menuLevels"
+          style="grid-column: 2; grid-row: 2"
+          id="medium2Level"
+          name="slot"
+        >
+          <img src="assets/menuLevels.png" class="menuLevelsBackground" />
+          <img
+            src="assets/LevelImages/medium2Level.png"
+            class="menuLevelsPreview"
+            name="imageSlot"
+          />
+          <p
+            class="menuLevelScore"
+            id="medium2Level_Score"
+            name="scoreSlot"
+          ></p>
+        </div>
+      </div>
+      <div class="menuLevelButtonSpace">
+        <div
+          onclick="changePage(false)"
+          class="menuLevelButton"
+          style="grid-column: 1"
+        >
+          <span class="menuButtonText">&#11164;</span>
+        </div>
+        <div class="menuLevelButton" style="grid-column: 2">
+          <span class="menuButtonText" id="pageInfo"></span>
+        </div>
+        <div
+          onclick="changePage(true)"
+          class="menuLevelButton"
+          style="grid-column: 3"
+        >
+          <span class="menuButtonText"> &#10148;</span>
+        </div>
+      </div>
+    </div>
+    <script src="js/mainMenu.js" defer></script>
+  </body>
+</html>
