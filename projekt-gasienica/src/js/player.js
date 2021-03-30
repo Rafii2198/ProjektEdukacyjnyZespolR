@@ -19,7 +19,7 @@ class Player {
       pop();
       push();
       fill(0, 255, 0);
-      if (Aiming.aimingMode) {
+      if (Aiming.aimingMode === true && maxShots != 0) {
         circle(
           Math.floor(
             Aiming.magnitude *

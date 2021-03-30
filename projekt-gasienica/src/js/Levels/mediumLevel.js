@@ -1,3 +1,4 @@
+var levelName = 'mediumLevel';
 // ANCHOR Aliases
 const Engine = Matter.Engine,
   World = Matter.World,
@@ -15,6 +16,7 @@ let targets = [];
 let terrain = [];
 let Points = 0;
 var player;
+var played = false;
 function setup() {
   createCanvas(800, 600);
   frameRate(60);
@@ -58,16 +60,19 @@ function draw() {
   for (var i = 0; i < targets.length; i++) {
     targets[i].show();
   }
-  textAlign(CENTER);
-  if (maxShots != 0) {
-    text(`Wynik: ${Points}`, width / 2, 24);
-  } else {
-    text(`Kliknij Prawy Przycisk myszy`, width / 2, 24);
-    window.addEventListener('click', () => {
-      if (Points > localStorage.getItem('mediumLevel_Score')) {
-        window.localStorage.setItem('mediumLevel_Score', Points);
-      }
-      window.location.href = '../index.html';
-    });
+  renderText();
+  if (
+    maxShots === 0 &&
+    Aiming.aimingMode === true &&
+    played === false &&
+    (levelComplete_SOUND.ended === false || levelFailed_SOUND.ended === false)
+  ) {
+    if (targets.length === 0) {
+      levelComplete_SOUND.play();
+      played = true;
+    } else {
+      levelFailed_SOUND.play();
+      played = true;
+    }
   }
 }

@@ -2,12 +2,14 @@ function KeyboardControlls() {
   if (Aiming.aimingMode && maxShots != 0) {
     if (keyIsPressed && key == ' ') {
       // Shooting
+      firing_SOUND.paused = true;
+      firing_SOUND.currentTime = 0;
       let proj = new Projectile(
         projectile_TEXTURE,
         player.x,
         player.y,
-        25,
-        25,
+        24,
+        24,
         {
           label: 'projectile',
         }
@@ -38,6 +40,7 @@ function KeyboardControlls() {
       Aiming.aimingMode = false;
       projectiles.push(proj);
       maxShots -= 1;
+      firing_SOUND.play();
     }
     if (
       keyIsPressed &&

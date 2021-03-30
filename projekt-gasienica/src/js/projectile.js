@@ -9,7 +9,7 @@ var Aiming = {
 };
 class Projectile {
   constructor(img, x, y, w, h, options) {
-    this.body = Bodies.rectangle(x, y, w, h, options);
+    this.body = Bodies.circle(x, y, w / 2, options);
     this.x = x;
     this.y = y;
     this.w = w;
