@@ -39,6 +39,15 @@ class Player {
         );
       }
       pop();
+      push();
+      textAlign(CENTER);
+      color(255);
+      stroke(0);
+      strokeWeight(0.15);
+      textSize(16);
+      textFont('bahnschrift');
+      text(`Strzały: ${maxShots}`, player.x, player.y - 65);
+      pop();
     };
   }
 }

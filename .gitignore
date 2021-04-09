@@ -90,3 +90,6 @@ out/
 
 # Build script
 build.sh
+
+#Counter
+.VSCodeCounter
