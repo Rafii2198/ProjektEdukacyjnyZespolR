@@ -14,10 +14,10 @@ function renderText() {
   }
   if (maxShots === 0) {
     window.addEventListener('click', () => {
-      if (Points > localStorage.getItem(`${levelName}_Score`)) {
-        window.localStorage.setItem(`${levelName}_Score`, Points);
+      if (Points > localStorage.getItem(`${levelSel}_Score`)) {
+        window.localStorage.setItem(`${levelSel}_Score`, Points);
       }
-      window.location.href = '../index.html';
+      window.location.href = './index.html';
     });
   }
   pop();

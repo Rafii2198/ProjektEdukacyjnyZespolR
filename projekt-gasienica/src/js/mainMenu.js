@@ -1,11 +1,7 @@
 let menuLevelClicked = new Audio('assets/Sounds/menuLevelClick.ogg');
 let buttonsSounds = document.getElementsByClassName('menuLevels');
 var file;
-var levels = [
-  ['tutorialLevel', 'mediumLevel', 'medium2Level', 'harderLevel'],
-  ['S2easyLevel', 'S2mediumLevel', 'S2mediumLevel2', 'S2harderLevel'],
-  ['S3easyLevel', 'S3mediumLevel', 'S3mediumLevel2', 'hidden'],
-];
+levels = Object.values(levels);
 var page = 0;
 function changeLevels() {
   document.getElementById('pageInfo').innerText = `Strona: ${page + 1} z ${
@@ -32,7 +28,7 @@ function changeButtons() {
     }
     element.onclick = () => {
       menuLevelClicked.play();
-      file = 'Levels/' + element.id + '.html';
+      file = `level.html?level=${element.id}`;
     };
   });
   menuLevelClicked.addEventListener('ended', () => {
@@ -43,14 +39,18 @@ function changeButtons() {
 changeLevels();
 changeButtons();
 
-async function changePage(way) {
-  if (way === true && page != levels.length - 1) {
+document.getElementById('buttonRight').onclick = () => {
+  if (page != levels.length - 1) {
     page++;
     changeLevels();
     changeButtons();
-  } else if (way === false && page != 0) {
+  }
+};
+
+document.getElementById('buttonLeft').onclick = () => {
+  if (page != 0) {
     page--;
     changeLevels();
     changeButtons();
   }
-}
+};

@@ -1,0 +1,12 @@
+{
+  "levelName": "Ukrycie",
+  "maxShots": 3,
+  "terrainRect": [[400, 575, 800, 50]],
+  "terrainCircle": [[200, 555, 135]],
+  "player": [650, 535, 5],
+  "targets": [
+    [65, 510, 40, 50],
+    [65, 65, 40, 50]
+  ],
+  "background": ["assets/Backgrounds/map1.png", -300, 0, 1200, 659]
+}

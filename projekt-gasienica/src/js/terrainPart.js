@@ -25,7 +25,6 @@ class terrainRect {
     };
   }
 }
-
 class terrainCircle {
   constructor(x, y, s) {
     this.body = Bodies.circle(x, y, s / 2, {

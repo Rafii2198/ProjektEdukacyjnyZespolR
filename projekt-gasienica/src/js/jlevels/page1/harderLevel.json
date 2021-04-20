@@ -1,0 +1,13 @@
+{
+  "levelName": "Grupa",
+  "maxShots": 2,
+  "terrainRect": [[400, 575, 800, 50]],
+  "terrainCircle": [],
+  "player": [400, 535, 5],
+  "targets": [
+    [400, 90, 45, 50],
+    [340, 140, 45, 50],
+    [460, 140, 45, 50]
+  ],
+  "background": ["assets/Backgrounds/map3.png", 0, 0, 1200, 659]
+}

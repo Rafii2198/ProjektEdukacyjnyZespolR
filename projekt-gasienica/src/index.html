@@ -79,25 +79,18 @@
         </div>
       </div>
       <div class="menuLevelButtonSpace">
-        <div
-          onclick="changePage(false)"
-          class="menuLevelButton"
-          style="grid-column: 1"
-        >
+        <div id="buttonLeft" class="menuLevelButton" style="grid-column: 1">
           <span class="menuButtonText">&#11164;</span>
         </div>
         <div class="menuLevelButton" style="grid-column: 2">
           <span class="menuButtonText" id="pageInfo"></span>
         </div>
-        <div
-          onclick="changePage(true)"
-          class="menuLevelButton"
-          style="grid-column: 3"
-        >
+        <div id="buttonRight" class="menuLevelButton" style="grid-column: 3">
           <span class="menuButtonText"> &#10148;</span>
         </div>
       </div>
     </div>
-    <script src="js/mainMenu.js" defer></script>
+    <script src="js/levelList.js"></script>
+    <script type="module" src="js/mainMenu.js"></script>
   </body>
 </html>

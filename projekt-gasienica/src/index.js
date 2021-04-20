@@ -2,6 +2,56 @@ const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const rpc = require('discord-rpc');
 const client = new rpc.Client({ transport: 'ipc' });
+const fs = require('fs');
+var levels = fs.readdirSync(`${__dirname}/js/jlevels`);
+function createJSON() {
+  let JSONstring = 'var levels = {';
+  for (let i = 0; i < levels.length; i++) {
+    JSONstring += `"${levels[i]}":[`;
+    let page = fs.readdirSync(`${__dirname}/js/jlevels/` + levels[i]);
+    let order = JSON.parse(
+      fs.readFileSync(
+        `${__dirname}/js/jlevels/${levels[i]}/order.json`,
+        'utf8',
+        (err) => {
+          if (err) {
+            return console.log(err);
+          }
+        }
+      )
+    );
+    let pageOrder = page.splice(page.indexOf('order.json'), 1);
+    let newpage = [];
+    ordering: for (
+      let newpageCounter = 0;
+      newpageCounter < page.length;
+      newpageCounter++
+    ) {
+      console.log(page[newpageCounter]);
+      newpage[newpageCounter] = page[order.order[newpageCounter]];
+    }
+    page = newpage;
+    levellop: for (let j = 0; j < page.length; j++) {
+      let level = page[j].slice(0, -5);
+      if (level === 'order') {
+        continue levellop;
+      }
+      JSONstring += `"${level}",`;
+      if (j === page.length - 1) {
+        JSONstring = JSONstring.slice(0, -1);
+      }
+    }
+    JSONstring += '],';
+  }
+  JSONstring = JSONstring.slice(0, -1);
+  JSONstring += '}';
+  return JSONstring;
+}
+
+fs.writeFile(`${__dirname}/js/levelList.js`, createJSON(), (err) => {
+  if (err) throw err;
+  console.log('Data written to file');
+});
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -13,7 +63,13 @@ const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 800,
-    height: 600,
+    height: () => {
+      if (process.platform === 'win32') {
+        return 620;
+      } else {
+        return 600;
+      }
+    },
     resizable: false,
     icon:
       '/run/media/rafii2198/HDD/Szkoła/ProjektEdukacyjnyZespolR/icons/output/icons/png/512x512.png',
@@ -22,7 +78,7 @@ const createWindow = () => {
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
