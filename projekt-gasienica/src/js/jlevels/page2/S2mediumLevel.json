@@ -1,0 +1,16 @@
+{
+  "levelName": "Z dwóch stron",
+  "maxShots": 8,
+  "terrainRect": [[400, 400, 250, 450]],
+  "terrainCircle": [],
+  "player": [400, 165, 5],
+  "targets": [
+    [137, 300, 40, 50],
+    [137, 500, 40, 50],
+    [137, 100, 40, 50],
+    [663, 300, 40, 50],
+    [663, 500, 40, 50],
+    [663, 100, 40, 50]
+  ],
+  "background": ["assets/Backgrounds/map1.png", -300, 0, 1200, 659]
+}

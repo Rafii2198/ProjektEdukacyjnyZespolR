@@ -1,0 +1,14 @@
+{
+  "levelName": "Linia",
+  "maxShots": 5,
+  "terrainRect": [[0, 450, 250, 300]],
+  "terrainCircle": [],
+  "player": [60, 290, 5],
+  "targets": [
+    [250, 525, 30, 50],
+    [400, 525, 35, 50],
+    [550, 525, 40, 50],
+    [700, 525, 45, 50]
+  ],
+  "background": ["assets/Backgrounds/map1.png", -300, 0, 1200, 659]
+}

@@ -1,0 +1,15 @@
+{
+  "levelName": "Dalekosiężność",
+  "maxShots": 4,
+  "terrainRect": [[0, 575, 250, 300]],
+  "terrainCircle": [],
+  "player": [60, 415, 5],
+  "targets": [
+    [725, 75, 40, 50],
+    [650, 75, 40, 50],
+    [575, 75, 40, 50],
+    [725, 150, 40, 50],
+    [725, 225, 40, 50]
+  ],
+  "background": ["assets/Backgrounds/map1.png", -300, 0, 1200, 659]
+}

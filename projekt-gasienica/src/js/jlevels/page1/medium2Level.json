@@ -1,0 +1,16 @@
+{
+  "levelName": "Ostrzał",
+  "maxShots": 4,
+  "terrainRect": [[400, 575, 800, 50]],
+  "terrainCircle": [],
+  "player": [400, 535, 5],
+  "targets": [
+    [50, 400, 45, 50],
+    [220, 450, 45, 50],
+    [280, 125, 45, 50],
+    [520, 125, 45, 50],
+    [580, 450, 45, 50],
+    [750, 400, 45, 50]
+  ],
+  "background": ["assets/Backgrounds/map3.png", 0, 0, 1200, 659]
+}

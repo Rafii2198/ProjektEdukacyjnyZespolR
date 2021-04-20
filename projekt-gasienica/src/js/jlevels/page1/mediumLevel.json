@@ -1,0 +1,15 @@
+{
+  "levelName": "Odbicie",
+  "maxShots": 3,
+  "terrainRect": [[400, 575, 800, 50]],
+  "terrainCircle": [],
+  "player": [400, 535, 5],
+  "targets": [
+    [100, 350, 45, 50],
+    [200, 300, 45, 50],
+    [400, 125, 45, 50],
+    [600, 300, 45, 50],
+    [700, 350, 45, 50]
+  ],
+  "background": ["assets/Backgrounds/map3.png", 0, 0, 1200, 659]
+}

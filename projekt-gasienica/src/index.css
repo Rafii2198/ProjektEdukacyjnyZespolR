@@ -83,6 +83,9 @@ body {
   user-select: none;
 }
 
-#hidden {
+#hidden,
+#hidden2,
+#hidden3,
+#hidden4 {
   display: none !important;
 }
